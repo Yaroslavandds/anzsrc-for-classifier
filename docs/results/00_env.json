@@ -1,0 +1,258 @@
+{
+ "time": "2026-11-03 22:46:51",
+ "errors": [],
+ "system": {
+  "python": "3.13.9",
+  "executable": "python.exe (Anaconda, base)",
+  "os": "Windows-11-10.0.26200-SP0",
+  "conda_env": "base",
+  "cpu": "AMD Ryzen 5 5500U with Radeon Graphics",
+  "cpu_threads": 12,
+  "cpu_cores": 6,
+  "ram_gb": 15.3,
+  "ram_free_gb": 5.2,
+  "disk_free_gb_project": 84.3,
+  "disk_free_gb_home": 17.2
+ },
+ "packages": {
+  "numpy": "2.3.5",
+  "scipy": "1.16.3",
+  "pandas": "2.3.3",
+  "pyarrow": "21.0.0",
+  "scikit-learn": "1.7.2",
+  "openpyxl": "3.1.5",
+  "tqdm": "4.67.1",
+  "psutil": "7.0.0",
+  "transformers": "5.22.1",
+  "tokenizers": "0.23.3",
+  "huggingface_hub": "2.4.0",
+  "safetensors": "0.8.0",
+  "torch": "2.14.1+cu130"
+ },
+ "nvidia": {
+  "gpus": [
+   {
+    "name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "driver": "621.01",
+    "memory_gb": 4.0,
+    "compute_cap": 8.6
+   }
+  ],
+  "driver_cuda": null
+ },
+ "dataset": {
+  "path": "../anzsrc4_cleaned.csv",
+  "found": true,
+  "size_mb": 220.4,
+  "rows": 109547,
+  "groups": 213,
+  "empty_labels": 0,
+  "empty_abstracts": 0,
+  "duplicate_ids": 0,
+  "labels_per_record": 1.75
+ },
+ "torch": {
+  "version": "2.14.1+cu130",
+  "cuda_build": "13.0",
+  "cuda_available": true
+ },
+ "tokens": {
+  "sample": 3000,
+  "median": 294,
+  "p90": 444,
+  "p95": 505,
+  "max": 3188,
+  "over_512": 0.046,
+  "mean_tokens_at_512": 297.3,
+  "over_384": 0.203,
+  "mean_tokens_at_384": 283.8
+ },
+ "gpu_trial": [
+  {
+   "precision": "bf16",
+   "gpu_memory_gb": 4.0,
+   "checkpointing": false,
+   "runs": [
+    {
+     "max_len": 512,
+     "batch": 2,
+     "sec_per_step": 0.125,
+     "texts_per_sec": 15.9,
+     "fits": true,
+     "peak_gb": 2.29
+    },
+    {
+     "max_len": 512,
+     "batch": 4,
+     "sec_per_step": 0.188,
+     "texts_per_sec": 21.3,
+     "fits": true,
+     "peak_gb": 2.7
+    },
+    {
+     "max_len": 512,
+     "batch": 8,
+     "sec_per_step": 0.314,
+     "texts_per_sec": 25.4,
+     "fits": true,
+     "peak_gb": 3.46
+    },
+    {
+     "max_len": 512,
+     "batch": 16,
+     "sec_per_step": 5.031,
+     "texts_per_sec": 3.2,
+     "fits": false,
+     "peak_gb": 5.06,
+     "error": "close to the memory limit or slowed down"
+    },
+    {
+     "max_len": 384,
+     "batch": 2,
+     "sec_per_step": 0.11,
+     "texts_per_sec": 18.2,
+     "fits": true,
+     "peak_gb": 2.19
+    },
+    {
+     "max_len": 384,
+     "batch": 4,
+     "sec_per_step": 0.153,
+     "texts_per_sec": 26.1,
+     "fits": true,
+     "peak_gb": 2.48
+    },
+    {
+     "max_len": 384,
+     "batch": 8,
+     "sec_per_step": 0.244,
+     "texts_per_sec": 32.8,
+     "fits": true,
+     "peak_gb": 3.05
+    },
+    {
+     "max_len": 384,
+     "batch": 16,
+     "sec_per_step": 1.93,
+     "texts_per_sec": 8.3,
+     "fits": false,
+     "peak_gb": 4.23,
+     "error": "close to the memory limit or slowed down"
+    }
+   ],
+   "best_512": {
+    "batch": 8,
+    "epoch_minutes": 36.6,
+    "hours_3_epochs": 1.8
+   },
+   "best_384": {
+    "batch": 8,
+    "epoch_minutes": 36.2,
+    "hours_3_epochs": 1.8
+   }
+  },
+  {
+   "precision": "bf16",
+   "gpu_memory_gb": 4.0,
+   "checkpointing": true,
+   "runs": [
+    {
+     "max_len": 512,
+     "batch": 2,
+     "sec_per_step": 0.16,
+     "texts_per_sec": 12.5,
+     "fits": true,
+     "peak_gb": 2.08
+    },
+    {
+     "max_len": 512,
+     "batch": 4,
+     "sec_per_step": 0.233,
+     "texts_per_sec": 17.2,
+     "fits": true,
+     "peak_gb": 2.09
+    },
+    {
+     "max_len": 512,
+     "batch": 8,
+     "sec_per_step": 0.399,
+     "texts_per_sec": 20.1,
+     "fits": true,
+     "peak_gb": 2.09
+    },
+    {
+     "max_len": 512,
+     "batch": 16,
+     "sec_per_step": 0.731,
+     "texts_per_sec": 21.9,
+     "fits": true,
+     "peak_gb": 2.31
+    },
+    {
+     "max_len": 512,
+     "batch": 32,
+     "sec_per_step": 1.385,
+     "texts_per_sec": 23.1,
+     "fits": true,
+     "peak_gb": 2.74
+    },
+    {
+     "max_len": 384,
+     "batch": 2,
+     "sec_per_step": 0.141,
+     "texts_per_sec": 14.2,
+     "fits": true,
+     "peak_gb": 2.07
+    },
+    {
+     "max_len": 384,
+     "batch": 4,
+     "sec_per_step": 0.187,
+     "texts_per_sec": 21.4,
+     "fits": true,
+     "peak_gb": 2.07
+    },
+    {
+     "max_len": 384,
+     "batch": 8,
+     "sec_per_step": 0.305,
+     "texts_per_sec": 26.2,
+     "fits": true,
+     "peak_gb": 2.07
+    },
+    {
+     "max_len": 384,
+     "batch": 16,
+     "sec_per_step": 0.54,
+     "texts_per_sec": 29.6,
+     "fits": true,
+     "peak_gb": 2.19
+    },
+    {
+     "max_len": 384,
+     "batch": 32,
+     "sec_per_step": 1.004,
+     "texts_per_sec": 31.9,
+     "fits": true,
+     "peak_gb": 2.52
+    }
+   ],
+   "best_512": {
+    "batch": 32,
+    "epoch_minutes": 40.4,
+    "hours_3_epochs": 2.0
+   },
+   "best_384": {
+    "batch": 32,
+    "epoch_minutes": 37.2,
+    "hours_3_epochs": 1.9
+   }
+  }
+ ],
+ "gpu_best": {
+  "hours": 1.8,
+  "max_len": 512,
+  "checkpointing": false,
+  "batch": 8
+ }
+}

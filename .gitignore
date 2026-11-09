@@ -1,0 +1,32 @@
+# The dataset is not distributed (220 MB, abstracts are third-party content):
+# put it next to this file as anzsrc4_cleaned.csv
+*.csv
+!data_prep/anzsrc_for2008_to_2020_ABS.csv
+!training/06_label_fixes.csv
+*.parquet
+*.pkl
+
+# intermediate files of data_prep (suggested output folder)
+work/
+
+# what the training scripts write
+training/data/
+training/models/
+training/reports/
+training/log_*.txt
+*.zip
+
+# Python, Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# editors, OS, Office lock files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*

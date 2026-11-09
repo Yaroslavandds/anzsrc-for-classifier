@@ -1,0 +1,278 @@
+{
+ "input": {
+  "path": "../anzsrc4_cleaned.csv",
+  "records": 109547,
+  "groups": 213
+ },
+ "params": {
+  "ratios": [
+   0.8,
+   0.1,
+   0.1
+  ],
+  "large_source": 500,
+  "homogeneous_share": 0.25,
+  "max_eval_unit": 600,
+  "slack": 0.002,
+  "seed": 42
+ },
+ "sources": {
+  "total": 13607,
+  "split_by_record": [
+   {
+    "source": "D:10.6084/m9",
+    "records": 3987,
+    "top_label_set_share": 0.11
+   },
+   {
+    "source": "H:openresearch.newcastle.edu.au",
+    "records": 872,
+    "top_label_set_share": 0.131
+   },
+   {
+    "source": "H:researchonline.jcu.edu.au",
+    "records": 619,
+    "top_label_set_share": 0.115
+   },
+   {
+    "source": "H:www.nzris.govt.nz",
+    "records": 667,
+    "top_label_set_share": 0.199
+   },
+   {
+    "source": "J:journal of environmental management",
+    "records": 867,
+    "top_label_set_share": 0.063
+   },
+   {
+    "source": "J:nature communications",
+    "records": 1138,
+    "top_label_set_share": 0.063
+   },
+   {
+    "source": "J:physical review letters",
+    "records": 646,
+    "top_label_set_share": 0.149
+   },
+   {
+    "source": "J:plos one",
+    "records": 3465,
+    "top_label_set_share": 0.02
+   },
+   {
+    "source": "J:proceedings of the national academy of sciences of the united states of america",
+    "records": 826,
+    "top_label_set_share": 0.051
+   },
+   {
+    "source": "J:scientific reports",
+    "records": 6943,
+    "top_label_set_share": 0.027
+   },
+   {
+    "source": "J:sensors",
+    "records": 1158,
+    "top_label_set_share": 0.098
+   }
+  ],
+  "train_only": [
+   {
+    "source": "D:10.1184/r1",
+    "records": 2017,
+    "top_label_set_share": 0.538
+   }
+  ]
+ },
+ "units": 34781,
+ "splits": {
+  "train": {
+   "records": 87205,
+   "share": 0.7961,
+   "sources": 9973,
+   "groups_present": 213,
+   "labels_per_record": 1.755
+  },
+  "val": {
+   "records": 11155,
+   "share": 0.1018,
+   "sources": 1868,
+   "groups_present": 213,
+   "labels_per_record": 1.72
+  },
+  "test": {
+   "records": 11187,
+   "share": 0.1021,
+   "sources": 1788,
+   "groups_present": 213,
+   "labels_per_record": 1.726
+  }
+ },
+ "origin_share": {
+  "train": {
+   "original": 0.786,
+   "new_material": 0.12,
+   "new": 0.092,
+   "original_updated": 0.001
+  },
+  "val": {
+   "original": 0.792,
+   "new_material": 0.109,
+   "new": 0.097,
+   "original_updated": 0.001
+  },
+  "test": {
+   "original": 0.793,
+   "new_material": 0.107,
+   "new": 0.1,
+   "original_updated": 0.001
+  }
+ },
+ "rare_groups": [
+  {
+   "code": "4517",
+   "name": "Pacific Peoples sciences",
+   "total": 6,
+   "train": 4,
+   "val": 1,
+   "test": 1
+  },
+  {
+   "code": "4506",
+   "name": "Aboriginal and Torres Strait Islander sciences",
+   "total": 69,
+   "train": 55,
+   "val": 7,
+   "test": 7
+  },
+  {
+   "code": "4515",
+   "name": "Pacific Peoples environmental knowledges",
+   "total": 95,
+   "train": 76,
+   "val": 10,
+   "test": 9
+  },
+  {
+   "code": "4512",
+   "name": "Ngā pūtaiao Māori (Māori sciences)",
+   "total": 116,
+   "train": 85,
+   "val": 11,
+   "test": 20
+  },
+  {
+   "code": "4599",
+   "name": "Other Indigenous studies",
+   "total": 130,
+   "train": 104,
+   "val": 13,
+   "test": 13
+  },
+  {
+   "code": "4514",
+   "name": "Pacific Peoples education",
+   "total": 162,
+   "train": 130,
+   "val": 16,
+   "test": 16
+  },
+  {
+   "code": "4509",
+   "name": "Ngā mātauranga taiao o te Māori (Māori environmental knowledges)",
+   "total": 164,
+   "train": 115,
+   "val": 14,
+   "test": 35
+  },
+  {
+   "code": "4508",
+   "name": "Mātauranga Māori (Māori education)",
+   "total": 168,
+   "train": 134,
+   "val": 17,
+   "test": 17
+  },
+  {
+   "code": "5099",
+   "name": "Other philosophy and religious studies",
+   "total": 174,
+   "train": 140,
+   "val": 17,
+   "test": 17
+  },
+  {
+   "code": "4511",
+   "name": "Ngā tāngata, te porihanga me ngā hapori o te Māori (Māori peoples, society and community)",
+   "total": 211,
+   "train": 169,
+   "val": 21,
+   "test": 21
+  },
+  {
+   "code": "4519",
+   "name": "Other Indigenous data, methodologies and global Indigenous studies",
+   "total": 285,
+   "train": 228,
+   "val": 28,
+   "test": 29
+  },
+  {
+   "code": "4518",
+   "name": "Pacific Peoples society and community",
+   "total": 309,
+   "train": 247,
+   "val": 31,
+   "test": 31
+  },
+  {
+   "code": "4503",
+   "name": "Aboriginal and Torres Strait Islander environmental knowledges and management",
+   "total": 326,
+   "train": 260,
+   "val": 33,
+   "test": 33
+  },
+  {
+   "code": "4399",
+   "name": "Other history, heritage and archaeology",
+   "total": 329,
+   "train": 263,
+   "val": 33,
+   "test": 33
+  },
+  {
+   "code": "4601",
+   "name": "Applied computing",
+   "total": 335,
+   "train": 268,
+   "val": 34,
+   "test": 33
+  }
+ ],
+ "checks": {
+  "titles_in_two_parts": 0,
+  "dois_in_two_parts": 0,
+  "whole_sources_in_two_parts": 0
+ },
+ "class_balance": {
+  "train": {
+   "max_abs_dev_pp": 9.88,
+   "mean_abs_dev_pp": 0.23
+  },
+  "val": {
+   "max_abs_dev_pp": 1.66,
+   "mean_abs_dev_pp": 0.08
+  },
+  "test": {
+   "max_abs_dev_pp": 11.34,
+   "mean_abs_dev_pp": 0.22
+  },
+  "note": "deviation of each group's share from 80/10/10, groups with >= 100 records"
+ },
+ "groups_missing": {
+  "train": [],
+  "val": [],
+  "test": []
+ },
+ "seconds": 20.3
+}

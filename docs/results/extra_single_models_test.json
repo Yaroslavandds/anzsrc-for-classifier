@@ -1,0 +1,74 @@
+{
+ "baseline": {
+  "p_at_1": 0.6564,
+  "hit_at_3": 0.8358,
+  "hit_at_5": 0.8934,
+  "micro_f1": 0.5982,
+  "macro_f1": 0.5728,
+  "macro_ap": 0.5842,
+  "division_p_at_1": 0.7667
+ },
+ "specter2": {
+  "p_at_1": 0.668,
+  "hit_at_3": 0.8534,
+  "hit_at_5": 0.9115,
+  "micro_f1": 0.5996,
+  "macro_f1": 0.5843,
+  "macro_ap": 0.6018,
+  "division_p_at_1": 0.7906
+ },
+ "scibert": {
+  "p_at_1": 0.6653,
+  "hit_at_3": 0.8513,
+  "hit_at_5": 0.9093,
+  "micro_f1": 0.5974,
+  "macro_f1": 0.5804,
+  "macro_ap": 0.6013,
+  "division_p_at_1": 0.7896
+ },
+ "baseline_clean": {
+  "p_at_1": 0.6568,
+  "hit_at_3": 0.8385,
+  "hit_at_5": 0.8943,
+  "micro_f1": 0.6013,
+  "macro_f1": 0.5748,
+  "macro_ap": 0.5868,
+  "division_p_at_1": 0.768
+ },
+ "specter2_clean": {
+  "p_at_1": 0.6696,
+  "hit_at_3": 0.856,
+  "hit_at_5": 0.9148,
+  "micro_f1": 0.6025,
+  "macro_f1": 0.5845,
+  "macro_ap": 0.605,
+  "division_p_at_1": 0.7954
+ },
+ "roberta_clean": {
+  "p_at_1": 0.6383,
+  "hit_at_3": 0.8343,
+  "hit_at_5": 0.8946,
+  "micro_f1": 0.5734,
+  "macro_f1": 0.557,
+  "macro_ap": 0.5711,
+  "division_p_at_1": 0.7749
+ },
+ "deberta_large_clean": {
+  "p_at_1": 0.6385,
+  "hit_at_3": 0.8305,
+  "hit_at_5": 0.8941,
+  "micro_f1": 0.5742,
+  "macro_f1": 0.5592,
+  "macro_ap": 0.5703,
+  "division_p_at_1": 0.7805
+ },
+ "modernbert_large_clean": {
+  "p_at_1": 0.6724,
+  "hit_at_3": 0.8544,
+  "hit_at_5": 0.9087,
+  "micro_f1": 0.6057,
+  "macro_f1": 0.5918,
+  "macro_ap": 0.6143,
+  "division_p_at_1": 0.7909
+ }
+}

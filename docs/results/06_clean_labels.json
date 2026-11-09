@@ -1,0 +1,201 @@
+{
+ "train_in": 87205,
+ "train_clean": 86289,
+ "excluded": 916,
+ "labels_changed": 933,
+ "excluded_by_rule": {
+  "record": 494,
+  "journal code": 401,
+  "journal code + record": 21
+ },
+ "journals": [
+  {
+   "journal": "Bioinformation",
+   "codes": "3102",
+   "records": 40,
+   "excluded": 40
+  },
+  {
+   "journal": "Energy",
+   "codes": "4019",
+   "records": 14,
+   "excluded": 0
+  },
+  {
+   "journal": "Food Bioscience",
+   "codes": "3001",
+   "records": 139,
+   "excluded": 1
+  },
+  {
+   "journal": "Huan jing ke xue= Huanjing kexue",
+   "codes": "4105;4106",
+   "records": 100,
+   "excluded": 93
+  },
+  {
+   "journal": "International Journal of Biometeorology",
+   "codes": "3702",
+   "records": 108,
+   "excluded": 5
+  },
+  {
+   "journal": "International Journal of Environmental Health Research",
+   "codes": "4011",
+   "records": 23,
+   "excluded": 1
+  },
+  {
+   "journal": "International Journal of Occupational Safety and Ergonomics",
+   "codes": "3303;4407",
+   "records": 59,
+   "excluded": 59
+  },
+  {
+   "journal": "Journal of Applied Statistics",
+   "codes": "3802",
+   "records": 21,
+   "excluded": 0
+  },
+  {
+   "journal": "Journal of Biotechnology",
+   "codes": "3001;3206",
+   "records": 226,
+   "excluded": 208
+  },
+  {
+   "journal": "Journal of Cleaner Production",
+   "codes": "4014",
+   "records": 55,
+   "excluded": 0
+  },
+  {
+   "journal": "Journal of Emergency Management",
+   "codes": "4404",
+   "records": 30,
+   "excluded": 1
+  },
+  {
+   "journal": "Journal of Medical Economics",
+   "codes": "4202",
+   "records": 25,
+   "excluded": 1
+  },
+  {
+   "journal": "Journal of Voice",
+   "codes": "3603",
+   "records": 202,
+   "excluded": 2
+  },
+  {
+   "journal": "Life",
+   "codes": "3104",
+   "records": 265,
+   "excluded": 11
+  },
+  {
+   "journal": "Queensland Review",
+   "codes": "5002",
+   "records": 22,
+   "excluded": 0
+  },
+  {
+   "journal": "Waste Management & Research The Journal for a Sustainable Circular Economy",
+   "codes": "3302",
+   "records": 26,
+   "excluded": 0
+  }
+ ],
+ "groups_changed_most": [
+  {
+   "code": "3603",
+   "before": 485,
+   "after": 282,
+   "change": -0.419
+  },
+  {
+   "code": "3001",
+   "before": 1288,
+   "after": 906,
+   "change": -0.297
+  },
+  {
+   "code": "3206",
+   "before": 782,
+   "after": 553,
+   "change": -0.293
+  },
+  {
+   "code": "3702",
+   "before": 508,
+   "after": 399,
+   "change": -0.215
+  },
+  {
+   "code": "3104",
+   "before": 1457,
+   "after": 1189,
+   "change": -0.184
+  },
+  {
+   "code": "4106",
+   "before": 538,
+   "after": 442,
+   "change": -0.178
+  },
+  {
+   "code": "4014",
+   "before": 484,
+   "after": 429,
+   "change": -0.114
+  },
+  {
+   "code": "3303",
+   "before": 561,
+   "after": 500,
+   "change": -0.109
+  },
+  {
+   "code": "4105",
+   "before": 936,
+   "after": 837,
+   "change": -0.106
+  },
+  {
+   "code": "4407",
+   "before": 961,
+   "after": 899,
+   "change": -0.065
+  },
+  {
+   "code": "4011",
+   "before": 541,
+   "after": 509,
+   "change": -0.059
+  },
+  {
+   "code": "3302",
+   "before": 530,
+   "after": 499,
+   "change": -0.058
+  },
+  {
+   "code": "4202",
+   "before": 679,
+   "after": 640,
+   "change": -0.057
+  },
+  {
+   "code": "4404",
+   "before": 796,
+   "after": 758,
+   "change": -0.048
+  },
+  {
+   "code": "5002",
+   "before": 611,
+   "after": 585,
+   "change": -0.043
+  }
+ ]
+}

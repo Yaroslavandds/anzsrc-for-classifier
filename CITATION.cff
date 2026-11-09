@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "ANZSRC FoR 2020 classifier: research field groups from title and abstract"
+abstract: >-
+  Data cleaning pipeline, source-grouped evaluation and an ensemble of TF-IDF, SPECTER2 and ModernBERT-large
+  that assigns ANZSRC Fields of Research 2020 groups (213 groups, 23 divisions) to research publications
+  from their title and abstract.
+authors:
+  - family-names: Korkos
+    given-names: Yaroslav
+type: software
+license: MIT
+date-released: 2026-11-09
+repository-code: "https://github.com/Yaroslavandds/anzsrc-for-classifier"
+keywords:
+  - ANZSRC
+  - Fields of Research
+  - text classification
+  - multi-label classification
+  - scientific documents
+  - SPECTER2
+  - ModernBERT

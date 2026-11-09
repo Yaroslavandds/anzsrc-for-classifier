@@ -1,0 +1,1652 @@
+{
+ "model": "microsoft/deberta-v3-large",
+ "args": {
+  "model": "microsoft/deberta-v3-large",
+  "name": null,
+  "train": "train_clean",
+  "epochs": 3,
+  "batch": 16,
+  "lr": 1.5e-05,
+  "head_lr": 0.0003,
+  "lora": 0,
+  "lora_alpha": 0,
+  "lora_dropout": 0.05,
+  "max_len": 512,
+  "no_checkpointing": false,
+  "save_every_min": 20.0,
+  "no_state": true,
+  "time_budget_h": 11.0,
+  "reserve_min": 45.0,
+  "fresh": false,
+  "smoke": false,
+  "device": "cuda",
+  "seed": 42
+ },
+ "best_epoch": 3,
+ "threshold": 0.88,
+ "val": {
+  "micro_f1": 0.5879,
+  "macro_f1": 0.5673,
+  "samples_f1": 0.5785,
+  "p_at_1": 0.6587,
+  "p_at_1_other_ok": 0.6861,
+  "hit_at_3": 0.8394,
+  "hit_at_5": 0.8988,
+  "recall_at_3": 0.7108,
+  "division_micro_f1": 0.7251,
+  "division_p_at_1": 0.7952,
+  "division_hit_at_2": 0.9079,
+  "macro_ap": 0.584,
+  "labels_true": 1.7199,
+  "labels_pred": 1.7425
+ },
+ "val_by_origin": {
+  "original": {
+   "records": 8854,
+   "micro_f1": 0.6341,
+   "macro_f1": 0.5573,
+   "samples_f1": 0.6123,
+   "p_at_1": 0.6829,
+   "p_at_1_other_ok": 0.6847,
+   "hit_at_3": 0.854,
+   "hit_at_5": 0.9059,
+   "recall_at_3": 0.7781,
+   "division_micro_f1": 0.7475,
+   "division_p_at_1": 0.7993,
+   "division_hit_at_2": 0.9101,
+   "macro_ap": 0.6221,
+   "labels_true": 1.6212,
+   "labels_pred": 1.6897
+  },
+  "new": {
+   "records": 1084,
+   "micro_f1": 0.4356,
+   "macro_f1": 0.2642,
+   "samples_f1": 0.4377,
+   "p_at_1": 0.5507,
+   "p_at_1_other_ok": 0.6799,
+   "hit_at_3": 0.7832,
+   "hit_at_5": 0.881,
+   "recall_at_3": 0.5074,
+   "division_micro_f1": 0.6459,
+   "division_p_at_1": 0.7786,
+   "division_hit_at_2": 0.9077,
+   "macro_ap": 0.3839,
+   "labels_true": 2.1688,
+   "labels_pred": 1.94
+  },
+  "new_material": {
+   "records": 1217,
+   "micro_f1": 0.4482,
+   "macro_f1": 0.2422,
+   "samples_f1": 0.458,
+   "p_at_1": 0.5793,
+   "p_at_1_other_ok": 0.7017,
+   "hit_at_3": 0.7839,
+   "hit_at_5": 0.8628,
+   "recall_at_3": 0.5139,
+   "division_micro_f1": 0.6518,
+   "division_p_at_1": 0.7806,
+   "division_hit_at_2": 0.8924,
+   "macro_ap": 0.3385,
+   "labels_true": 2.0386,
+   "labels_pred": 1.9507
+  }
+ },
+ "history": [
+  {
+   "epoch": 1,
+   "threshold": 0.86,
+   "micro_f1": 0.5048,
+   "macro_f1": 0.4745,
+   "samples_f1": 0.4885,
+   "p_at_1": 0.5637,
+   "p_at_1_other_ok": 0.5957,
+   "hit_at_3": 0.7722,
+   "hit_at_5": 0.8433,
+   "recall_at_3": 0.6259,
+   "division_micro_f1": 0.6778,
+   "division_p_at_1": 0.7471,
+   "division_hit_at_2": 0.8787,
+   "macro_ap": 0.4932,
+   "labels_true": 1.7199,
+   "labels_pred": 1.9055,
+   "minutes": 206.5
+  },
+  {
+   "epoch": 2,
+   "threshold": 0.88,
+   "micro_f1": 0.5587,
+   "macro_f1": 0.5338,
+   "samples_f1": 0.5468,
+   "p_at_1": 0.6261,
+   "p_at_1_other_ok": 0.6612,
+   "hit_at_3": 0.8139,
+   "hit_at_5": 0.8811,
+   "recall_at_3": 0.6817,
+   "division_micro_f1": 0.7094,
+   "division_p_at_1": 0.7788,
+   "division_hit_at_2": 0.8982,
+   "macro_ap": 0.5598,
+   "labels_true": 1.7199,
+   "labels_pred": 1.7473,
+   "minutes": 410.9
+  },
+  {
+   "epoch": 3,
+   "threshold": 0.88,
+   "micro_f1": 0.5879,
+   "macro_f1": 0.5673,
+   "samples_f1": 0.5785,
+   "p_at_1": 0.6587,
+   "p_at_1_other_ok": 0.6861,
+   "hit_at_3": 0.8394,
+   "hit_at_5": 0.8988,
+   "recall_at_3": 0.7108,
+   "division_micro_f1": 0.7251,
+   "division_p_at_1": 0.7952,
+   "division_hit_at_2": 0.9079,
+   "macro_ap": 0.584,
+   "labels_true": 1.7199,
+   "labels_pred": 1.7425,
+   "minutes": 617.4
+  }
+ ],
+ "val_per_group": [
+  {
+   "code": "4517",
+   "name": "Pacific Peoples sciences",
+   "train": 4,
+   "val": 1,
+   "f1": 0.0
+  },
+  {
+   "code": "4601",
+   "name": "Applied computing",
+   "train": 268,
+   "val": 34,
+   "f1": 0.0
+  },
+  {
+   "code": "4702",
+   "name": "Cultural studies",
+   "train": 617,
+   "val": 85,
+   "f1": 0.0142
+  },
+  {
+   "code": "4599",
+   "name": "Other Indigenous studies",
+   "train": 104,
+   "val": 13,
+   "f1": 0.1951
+  },
+  {
+   "code": "4515",
+   "name": "Pacific Peoples environmental knowledges",
+   "train": 76,
+   "val": 10,
+   "f1": 0.2
+  },
+  {
+   "code": "4299",
+   "name": "Other health sciences",
+   "train": 644,
+   "val": 81,
+   "f1": 0.2202
+  },
+  {
+   "code": "4410",
+   "name": "Sociology",
+   "train": 870,
+   "val": 111,
+   "f1": 0.2412
+  },
+  {
+   "code": "3904",
+   "name": "Specialist studies in education",
+   "train": 836,
+   "val": 105,
+   "f1": 0.2439
+  },
+  {
+   "code": "4999",
+   "name": "Other mathematical sciences",
+   "train": 468,
+   "val": 59,
+   "f1": 0.2529
+  },
+  {
+   "code": "3601",
+   "name": "Art history, theory and criticism",
+   "train": 299,
+   "val": 37,
+   "f1": 0.3133
+  },
+  {
+   "code": "5199",
+   "name": "Other physical sciences",
+   "train": 615,
+   "val": 77,
+   "f1": 0.314
+  },
+  {
+   "code": "4101",
+   "name": "Climate change impacts and adaptation",
+   "train": 689,
+   "val": 86,
+   "f1": 0.325
+  },
+  {
+   "code": "5201",
+   "name": "Applied and developmental psychology",
+   "train": 817,
+   "val": 103,
+   "f1": 0.3351
+  },
+  {
+   "code": "5203",
+   "name": "Clinical and health psychology",
+   "train": 755,
+   "val": 95,
+   "f1": 0.3441
+  },
+  {
+   "code": "4099",
+   "name": "Other engineering",
+   "train": 1049,
+   "val": 131,
+   "f1": 0.3489
+  },
+  {
+   "code": "4605",
+   "name": "Data management and data science",
+   "train": 1082,
+   "val": 135,
+   "f1": 0.3502
+  },
+  {
+   "code": "5204",
+   "name": "Cognitive and computational psychology",
+   "train": 786,
+   "val": 98,
+   "f1": 0.3502
+  },
+  {
+   "code": "4519",
+   "name": "Other Indigenous data, methodologies and global Indigenous studies",
+   "train": 228,
+   "val": 28,
+   "f1": 0.3514
+  },
+  {
+   "code": "4506",
+   "name": "Aboriginal and Torres Strait Islander sciences",
+   "train": 55,
+   "val": 7,
+   "f1": 0.3529
+  },
+  {
+   "code": "4804",
+   "name": "Law in context",
+   "train": 680,
+   "val": 89,
+   "f1": 0.3548
+  },
+  {
+   "code": "3505",
+   "name": "Human resources and industrial relations",
+   "train": 518,
+   "val": 65,
+   "f1": 0.3621
+  },
+  {
+   "code": "5001",
+   "name": "Applied ethics",
+   "train": 746,
+   "val": 94,
+   "f1": 0.3625
+  },
+  {
+   "code": "4609",
+   "name": "Information systems",
+   "train": 603,
+   "val": 76,
+   "f1": 0.3636
+  },
+  {
+   "code": "4404",
+   "name": "Development studies",
+   "train": 758,
+   "val": 99,
+   "f1": 0.3647
+  },
+  {
+   "code": "4102",
+   "name": "Ecological applications",
+   "train": 766,
+   "val": 97,
+   "f1": 0.3667
+  },
+  {
+   "code": "4901",
+   "name": "Applied mathematics",
+   "train": 708,
+   "val": 90,
+   "f1": 0.3687
+  },
+  {
+   "code": "4512",
+   "name": "Ngā pūtaiao Māori (Māori sciences)",
+   "train": 85,
+   "val": 11,
+   "f1": 0.3704
+  },
+  {
+   "code": "3214",
+   "name": "Pharmacology and pharmaceutical sciences",
+   "train": 595,
+   "val": 76,
+   "f1": 0.3731
+  },
+  {
+   "code": "4499",
+   "name": "Other human society",
+   "train": 676,
+   "val": 84,
+   "f1": 0.3733
+  },
+  {
+   "code": "3209",
+   "name": "Neurosciences",
+   "train": 491,
+   "val": 63,
+   "f1": 0.3742
+  },
+  {
+   "code": "4206",
+   "name": "Public health",
+   "train": 1980,
+   "val": 250,
+   "f1": 0.3747
+  },
+  {
+   "code": "5099",
+   "name": "Other philosophy and religious studies",
+   "train": 140,
+   "val": 17,
+   "f1": 0.3889
+  },
+  {
+   "code": "4611",
+   "name": "Machine learning",
+   "train": 686,
+   "val": 86,
+   "f1": 0.3926
+  },
+  {
+   "code": "3699",
+   "name": "Other creative arts and writing",
+   "train": 527,
+   "val": 66,
+   "f1": 0.3942
+  },
+  {
+   "code": "4802",
+   "name": "Environmental and resources law",
+   "train": 456,
+   "val": 57,
+   "f1": 0.3968
+  },
+  {
+   "code": "4799",
+   "name": "Other language, communication and culture",
+   "train": 339,
+   "val": 42,
+   "f1": 0.4
+  },
+  {
+   "code": "3903",
+   "name": "Education systems",
+   "train": 856,
+   "val": 108,
+   "f1": 0.4082
+  },
+  {
+   "code": "4104",
+   "name": "Environmental management",
+   "train": 1490,
+   "val": 187,
+   "f1": 0.4118
+  },
+  {
+   "code": "4407",
+   "name": "Policy and administration",
+   "train": 899,
+   "val": 120,
+   "f1": 0.4128
+  },
+  {
+   "code": "3901",
+   "name": "Curriculum and pedagogy",
+   "train": 1197,
+   "val": 150,
+   "f1": 0.4138
+  },
+  {
+   "code": "4603",
+   "name": "Computer vision and multimedia computation",
+   "train": 584,
+   "val": 73,
+   "f1": 0.4154
+  },
+  {
+   "code": "3899",
+   "name": "Other economics",
+   "train": 604,
+   "val": 75,
+   "f1": 0.4211
+  },
+  {
+   "code": "4608",
+   "name": "Human-centred computing",
+   "train": 577,
+   "val": 72,
+   "f1": 0.4225
+  },
+  {
+   "code": "5003",
+   "name": "Philosophy",
+   "train": 529,
+   "val": 66,
+   "f1": 0.4225
+  },
+  {
+   "code": "4208",
+   "name": "Traditional, complementary and integrative medicine",
+   "train": 430,
+   "val": 55,
+   "f1": 0.4255
+  },
+  {
+   "code": "4008",
+   "name": "Electrical engineering",
+   "train": 794,
+   "val": 102,
+   "f1": 0.4264
+  },
+  {
+   "code": "4511",
+   "name": "Ngā tāngata, te porihanga me ngā hapori o te Māori (Māori peoples, society and community)",
+   "train": 169,
+   "val": 21,
+   "f1": 0.4286
+  },
+  {
+   "code": "4199",
+   "name": "Other environmental sciences",
+   "train": 839,
+   "val": 105,
+   "f1": 0.433
+  },
+  {
+   "code": "4602",
+   "name": "Artificial intelligence",
+   "train": 645,
+   "val": 82,
+   "f1": 0.4397
+  },
+  {
+   "code": "3202",
+   "name": "Clinical sciences",
+   "train": 2793,
+   "val": 351,
+   "f1": 0.4403
+  },
+  {
+   "code": "4606",
+   "name": "Distributed computing and systems software",
+   "train": 475,
+   "val": 62,
+   "f1": 0.4483
+  },
+  {
+   "code": "3403",
+   "name": "Macromolecular and materials chemistry",
+   "train": 875,
+   "val": 110,
+   "f1": 0.4555
+  },
+  {
+   "code": "4699",
+   "name": "Other information and computing sciences",
+   "train": 956,
+   "val": 119,
+   "f1": 0.4579
+  },
+  {
+   "code": "5102",
+   "name": "Atomic, molecular and optical physics",
+   "train": 428,
+   "val": 54,
+   "f1": 0.4587
+  },
+  {
+   "code": "5104",
+   "name": "Condensed matter physics",
+   "train": 525,
+   "val": 67,
+   "f1": 0.4615
+  },
+  {
+   "code": "3605",
+   "name": "Screen and digital media",
+   "train": 484,
+   "val": 61,
+   "f1": 0.4638
+  },
+  {
+   "code": "5205",
+   "name": "Social and personality psychology",
+   "train": 589,
+   "val": 74,
+   "f1": 0.464
+  },
+  {
+   "code": "3199",
+   "name": "Other biological sciences",
+   "train": 1080,
+   "val": 135,
+   "f1": 0.4659
+  },
+  {
+   "code": "3299",
+   "name": "Other biomedical and clinical sciences",
+   "train": 539,
+   "val": 67,
+   "f1": 0.4722
+  },
+  {
+   "code": "4399",
+   "name": "Other history, heritage and archaeology",
+   "train": 263,
+   "val": 33,
+   "f1": 0.4737
+  },
+  {
+   "code": "4303",
+   "name": "Historical studies",
+   "train": 772,
+   "val": 96,
+   "f1": 0.4796
+  },
+  {
+   "code": "4899",
+   "name": "Other law and legal studies",
+   "train": 396,
+   "val": 50,
+   "f1": 0.48
+  },
+  {
+   "code": "4801",
+   "name": "Commercial law",
+   "train": 404,
+   "val": 51,
+   "f1": 0.4808
+  },
+  {
+   "code": "4406",
+   "name": "Human geography",
+   "train": 704,
+   "val": 88,
+   "f1": 0.4855
+  },
+  {
+   "code": "4202",
+   "name": "Epidemiology",
+   "train": 640,
+   "val": 85,
+   "f1": 0.4878
+  },
+  {
+   "code": "4009",
+   "name": "Electronics, sensors and digital hardware",
+   "train": 1295,
+   "val": 165,
+   "f1": 0.4898
+  },
+  {
+   "code": "4003",
+   "name": "Biomedical engineering",
+   "train": 861,
+   "val": 109,
+   "f1": 0.4933
+  },
+  {
+   "code": "5103",
+   "name": "Classical physics",
+   "train": 488,
+   "val": 61,
+   "f1": 0.4959
+  },
+  {
+   "code": "5005",
+   "name": "Theology",
+   "train": 420,
+   "val": 53,
+   "f1": 0.5
+  },
+  {
+   "code": "4203",
+   "name": "Health services and systems",
+   "train": 2112,
+   "val": 265,
+   "f1": 0.5022
+  },
+  {
+   "code": "4004",
+   "name": "Chemical engineering",
+   "train": 876,
+   "val": 111,
+   "f1": 0.5078
+  },
+  {
+   "code": "4408",
+   "name": "Political science",
+   "train": 573,
+   "val": 72,
+   "f1": 0.5132
+  },
+  {
+   "code": "4018",
+   "name": "Nanotechnology",
+   "train": 598,
+   "val": 76,
+   "f1": 0.5172
+  },
+  {
+   "code": "3208",
+   "name": "Medical physiology",
+   "train": 426,
+   "val": 54,
+   "f1": 0.5185
+  },
+  {
+   "code": "3803",
+   "name": "Economic theory",
+   "train": 446,
+   "val": 56,
+   "f1": 0.5197
+  },
+  {
+   "code": "5202",
+   "name": "Biological psychology",
+   "train": 879,
+   "val": 111,
+   "f1": 0.5202
+  },
+  {
+   "code": "3602",
+   "name": "Creative and professional writing",
+   "train": 489,
+   "val": 61,
+   "f1": 0.5205
+  },
+  {
+   "code": "4806",
+   "name": "Private law and civil obligations",
+   "train": 466,
+   "val": 58,
+   "f1": 0.5225
+  },
+  {
+   "code": "3213",
+   "name": "Paediatrics",
+   "train": 443,
+   "val": 57,
+   "f1": 0.5263
+  },
+  {
+   "code": "4705",
+   "name": "Literary studies",
+   "train": 493,
+   "val": 62,
+   "f1": 0.5263
+  },
+  {
+   "code": "4405",
+   "name": "Gender studies",
+   "train": 772,
+   "val": 97,
+   "f1": 0.5285
+  },
+  {
+   "code": "3405",
+   "name": "Organic chemistry",
+   "train": 453,
+   "val": 57,
+   "f1": 0.5357
+  },
+  {
+   "code": "4409",
+   "name": "Social work",
+   "train": 499,
+   "val": 62,
+   "f1": 0.5385
+  },
+  {
+   "code": "4010",
+   "name": "Engineering practice and education",
+   "train": 443,
+   "val": 55,
+   "f1": 0.5397
+  },
+  {
+   "code": "3303",
+   "name": "Design",
+   "train": 500,
+   "val": 70,
+   "f1": 0.5417
+  },
+  {
+   "code": "3101",
+   "name": "Biochemistry and cell biology",
+   "train": 2056,
+   "val": 261,
+   "f1": 0.5451
+  },
+  {
+   "code": "3999",
+   "name": "Other education",
+   "train": 749,
+   "val": 94,
+   "f1": 0.5475
+  },
+  {
+   "code": "3201",
+   "name": "Cardiovascular medicine and haematology",
+   "train": 397,
+   "val": 51,
+   "f1": 0.5517
+  },
+  {
+   "code": "5108",
+   "name": "Quantum physics",
+   "train": 639,
+   "val": 81,
+   "f1": 0.5549
+  },
+  {
+   "code": "3210",
+   "name": "Nutrition and dietetics",
+   "train": 495,
+   "val": 62,
+   "f1": 0.5556
+  },
+  {
+   "code": "4207",
+   "name": "Sports science and exercise",
+   "train": 471,
+   "val": 60,
+   "f1": 0.5581
+  },
+  {
+   "code": "4401",
+   "name": "Anthropology",
+   "train": 560,
+   "val": 71,
+   "f1": 0.56
+  },
+  {
+   "code": "3399",
+   "name": "Other built environment and design",
+   "train": 545,
+   "val": 68,
+   "f1": 0.5616
+  },
+  {
+   "code": "4805",
+   "name": "Legal systems",
+   "train": 444,
+   "val": 56,
+   "f1": 0.5616
+  },
+  {
+   "code": "3402",
+   "name": "Inorganic chemistry",
+   "train": 635,
+   "val": 80,
+   "f1": 0.5635
+  },
+  {
+   "code": "5004",
+   "name": "Religious studies",
+   "train": 485,
+   "val": 63,
+   "f1": 0.5674
+  },
+  {
+   "code": "4903",
+   "name": "Numerical and computational mathematics",
+   "train": 429,
+   "val": 54,
+   "f1": 0.569
+  },
+  {
+   "code": "4701",
+   "name": "Communication and media studies",
+   "train": 715,
+   "val": 90,
+   "f1": 0.5714
+  },
+  {
+   "code": "3099",
+   "name": "Other agricultural, veterinary and food sciences",
+   "train": 648,
+   "val": 81,
+   "f1": 0.5733
+  },
+  {
+   "code": "5299",
+   "name": "Other psychology",
+   "train": 846,
+   "val": 106,
+   "f1": 0.5739
+  },
+  {
+   "code": "3406",
+   "name": "Physical chemistry",
+   "train": 1271,
+   "val": 160,
+   "f1": 0.5806
+  },
+  {
+   "code": "3704",
+   "name": "Geoinformatics",
+   "train": 495,
+   "val": 63,
+   "f1": 0.5843
+  },
+  {
+   "code": "4201",
+   "name": "Allied health and rehabilitation science",
+   "train": 922,
+   "val": 117,
+   "f1": 0.5863
+  },
+  {
+   "code": "3304",
+   "name": "Urban and regional planning",
+   "train": 548,
+   "val": 69,
+   "f1": 0.5867
+  },
+  {
+   "code": "4205",
+   "name": "Nursing",
+   "train": 704,
+   "val": 89,
+   "f1": 0.5882
+  },
+  {
+   "code": "4103",
+   "name": "Environmental biotechnology",
+   "train": 452,
+   "val": 57,
+   "f1": 0.5909
+  },
+  {
+   "code": "3205",
+   "name": "Medical biochemistry and metabolomics",
+   "train": 486,
+   "val": 62,
+   "f1": 0.5926
+  },
+  {
+   "code": "3902",
+   "name": "Education policy, sociology and philosophy",
+   "train": 471,
+   "val": 59,
+   "f1": 0.5942
+  },
+  {
+   "code": "4302",
+   "name": "Heritage, archive and museum studies",
+   "train": 484,
+   "val": 61,
+   "f1": 0.5942
+  },
+  {
+   "code": "4013",
+   "name": "Geomatic engineering",
+   "train": 465,
+   "val": 58,
+   "f1": 0.5954
+  },
+  {
+   "code": "3506",
+   "name": "Marketing",
+   "train": 765,
+   "val": 96,
+   "f1": 0.5962
+  },
+  {
+   "code": "4007",
+   "name": "Control engineering, mechatronics and robotics",
+   "train": 647,
+   "val": 82,
+   "f1": 0.5969
+  },
+  {
+   "code": "5002",
+   "name": "History and philosophy of specific fields",
+   "train": 585,
+   "val": 88,
+   "f1": 0.5973
+  },
+  {
+   "code": "3109",
+   "name": "Zoology",
+   "train": 1604,
+   "val": 202,
+   "f1": 0.5979
+  },
+  {
+   "code": "3404",
+   "name": "Medicinal and biomolecular chemistry",
+   "train": 852,
+   "val": 107,
+   "f1": 0.5981
+  },
+  {
+   "code": "3801",
+   "name": "Applied economics",
+   "train": 1507,
+   "val": 188,
+   "f1": 0.6
+  },
+  {
+   "code": "4403",
+   "name": "Demography",
+   "train": 475,
+   "val": 59,
+   "f1": 0.6016
+  },
+  {
+   "code": "3504",
+   "name": "Commercial services",
+   "train": 611,
+   "val": 77,
+   "f1": 0.603
+  },
+  {
+   "code": "4505",
+   "name": "Aboriginal and Torres Strait Islander peoples, society and community",
+   "train": 447,
+   "val": 58,
+   "f1": 0.6034
+  },
+  {
+   "code": "4001",
+   "name": "Aerospace engineering",
+   "train": 434,
+   "val": 54,
+   "f1": 0.6078
+  },
+  {
+   "code": "3211",
+   "name": "Oncology and carcinogenesis",
+   "train": 994,
+   "val": 125,
+   "f1": 0.6199
+  },
+  {
+   "code": "3708",
+   "name": "Oceanography",
+   "train": 555,
+   "val": 69,
+   "f1": 0.624
+  },
+  {
+   "code": "3703",
+   "name": "Geochemistry",
+   "train": 569,
+   "val": 71,
+   "f1": 0.6241
+  },
+  {
+   "code": "4012",
+   "name": "Fluid mechanics and thermal engineering",
+   "train": 514,
+   "val": 64,
+   "f1": 0.625
+  },
+  {
+   "code": "4807",
+   "name": "Public law",
+   "train": 479,
+   "val": 60,
+   "f1": 0.6267
+  },
+  {
+   "code": "4607",
+   "name": "Graphics, augmented reality and games",
+   "train": 427,
+   "val": 53,
+   "f1": 0.6296
+  },
+  {
+   "code": "4005",
+   "name": "Civil engineering",
+   "train": 1032,
+   "val": 129,
+   "f1": 0.6307
+  },
+  {
+   "code": "3709",
+   "name": "Physical geography and environmental geoscience",
+   "train": 693,
+   "val": 87,
+   "f1": 0.6339
+  },
+  {
+   "code": "4011",
+   "name": "Environmental engineering",
+   "train": 509,
+   "val": 68,
+   "f1": 0.6341
+  },
+  {
+   "code": "3702",
+   "name": "Climate change science",
+   "train": 399,
+   "val": 63,
+   "f1": 0.6349
+  },
+  {
+   "code": "3507",
+   "name": "Strategy, management and organisational behaviour",
+   "train": 1200,
+   "val": 150,
+   "f1": 0.6366
+  },
+  {
+   "code": "4904",
+   "name": "Pure mathematics",
+   "train": 442,
+   "val": 56,
+   "f1": 0.6372
+  },
+  {
+   "code": "4204",
+   "name": "Midwifery",
+   "train": 420,
+   "val": 53,
+   "f1": 0.6379
+  },
+  {
+   "code": "3102",
+   "name": "Bioinformatics and computational biology",
+   "train": 1319,
+   "val": 170,
+   "f1": 0.6433
+  },
+  {
+   "code": "3207",
+   "name": "Medical microbiology",
+   "train": 631,
+   "val": 79,
+   "f1": 0.6437
+  },
+  {
+   "code": "4301",
+   "name": "Archaeology",
+   "train": 676,
+   "val": 85,
+   "f1": 0.6449
+  },
+  {
+   "code": "4509",
+   "name": "Ngā mātauranga taiao o te Māori (Māori environmental knowledges)",
+   "train": 115,
+   "val": 14,
+   "f1": 0.6452
+  },
+  {
+   "code": "3407",
+   "name": "Theoretical and computational chemistry",
+   "train": 457,
+   "val": 57,
+   "f1": 0.6457
+  },
+  {
+   "code": "4508",
+   "name": "Mātauranga Māori (Māori education)",
+   "train": 134,
+   "val": 17,
+   "f1": 0.6471
+  },
+  {
+   "code": "3301",
+   "name": "Architecture",
+   "train": 596,
+   "val": 75,
+   "f1": 0.6497
+  },
+  {
+   "code": "3499",
+   "name": "Other chemical sciences",
+   "train": 997,
+   "val": 125,
+   "f1": 0.65
+  },
+  {
+   "code": "3108",
+   "name": "Plant biology",
+   "train": 1581,
+   "val": 200,
+   "f1": 0.6531
+  },
+  {
+   "code": "3802",
+   "name": "Econometrics",
+   "train": 683,
+   "val": 88,
+   "f1": 0.654
+  },
+  {
+   "code": "4613",
+   "name": "Theory of computation",
+   "train": 498,
+   "val": 63,
+   "f1": 0.6545
+  },
+  {
+   "code": "4017",
+   "name": "Mechanical engineering",
+   "train": 684,
+   "val": 86,
+   "f1": 0.6588
+  },
+  {
+   "code": "4402",
+   "name": "Criminology",
+   "train": 809,
+   "val": 101,
+   "f1": 0.6608
+  },
+  {
+   "code": "3401",
+   "name": "Analytical chemistry",
+   "train": 642,
+   "val": 81,
+   "f1": 0.663
+  },
+  {
+   "code": "3606",
+   "name": "Visual arts",
+   "train": 918,
+   "val": 116,
+   "f1": 0.664
+  },
+  {
+   "code": "4612",
+   "name": "Software engineering",
+   "train": 508,
+   "val": 64,
+   "f1": 0.6667
+  },
+  {
+   "code": "3103",
+   "name": "Ecology",
+   "train": 3521,
+   "val": 441,
+   "f1": 0.6684
+  },
+  {
+   "code": "3604",
+   "name": "Performing arts",
+   "train": 554,
+   "val": 69,
+   "f1": 0.6714
+  },
+  {
+   "code": "3503",
+   "name": "Business systems in context",
+   "train": 883,
+   "val": 110,
+   "f1": 0.6719
+  },
+  {
+   "code": "4106",
+   "name": "Soil sciences",
+   "train": 442,
+   "val": 67,
+   "f1": 0.6719
+  },
+  {
+   "code": "5107",
+   "name": "Particle and high energy physics",
+   "train": 395,
+   "val": 50,
+   "f1": 0.6723
+  },
+  {
+   "code": "3509",
+   "name": "Transportation, logistics and supply chains",
+   "train": 615,
+   "val": 77,
+   "f1": 0.6748
+  },
+  {
+   "code": "4518",
+   "name": "Pacific Peoples society and community",
+   "train": 247,
+   "val": 31,
+   "f1": 0.6757
+  },
+  {
+   "code": "3204",
+   "name": "Immunology",
+   "train": 542,
+   "val": 68,
+   "f1": 0.6809
+  },
+  {
+   "code": "3599",
+   "name": "Other commerce, management, tourism and services",
+   "train": 1732,
+   "val": 217,
+   "f1": 0.6809
+  },
+  {
+   "code": "4902",
+   "name": "Mathematical physics",
+   "train": 476,
+   "val": 60,
+   "f1": 0.6812
+  },
+  {
+   "code": "3302",
+   "name": "Building",
+   "train": 499,
+   "val": 66,
+   "f1": 0.6815
+  },
+  {
+   "code": "3501",
+   "name": "Accounting, auditing and accountability",
+   "train": 468,
+   "val": 59,
+   "f1": 0.6815
+  },
+  {
+   "code": "4015",
+   "name": "Maritime engineering",
+   "train": 420,
+   "val": 52,
+   "f1": 0.6852
+  },
+  {
+   "code": "5101",
+   "name": "Astronomical sciences",
+   "train": 480,
+   "val": 60,
+   "f1": 0.6885
+  },
+  {
+   "code": "4803",
+   "name": "International and comparative law",
+   "train": 449,
+   "val": 56,
+   "f1": 0.6897
+  },
+  {
+   "code": "3707",
+   "name": "Hydrology",
+   "train": 491,
+   "val": 62,
+   "f1": 0.6901
+  },
+  {
+   "code": "4105",
+   "name": "Pollution and contamination",
+   "train": 837,
+   "val": 117,
+   "f1": 0.6929
+  },
+  {
+   "code": "3215",
+   "name": "Reproductive medicine",
+   "train": 763,
+   "val": 96,
+   "f1": 0.6957
+  },
+  {
+   "code": "3701",
+   "name": "Atmospheric sciences",
+   "train": 736,
+   "val": 92,
+   "f1": 0.6986
+  },
+  {
+   "code": "4016",
+   "name": "Materials engineering",
+   "train": 1000,
+   "val": 150,
+   "f1": 0.6991
+  },
+  {
+   "code": "3001",
+   "name": "Agricultural biotechnology",
+   "train": 906,
+   "val": 161,
+   "f1": 0.7025
+  },
+  {
+   "code": "4507",
+   "name": "Te ahurea, reo me te hītori o te Māori (Māori culture, language and history)",
+   "train": 276,
+   "val": 34,
+   "f1": 0.7042
+  },
+  {
+   "code": "4604",
+   "name": "Cybersecurity and privacy",
+   "train": 453,
+   "val": 57,
+   "f1": 0.7077
+  },
+  {
+   "code": "3008",
+   "name": "Horticultural production",
+   "train": 1204,
+   "val": 152,
+   "f1": 0.7083
+  },
+  {
+   "code": "4019",
+   "name": "Resources engineering and extractive metallurgy",
+   "train": 437,
+   "val": 56,
+   "f1": 0.7087
+  },
+  {
+   "code": "3107",
+   "name": "Microbiology",
+   "train": 2147,
+   "val": 271,
+   "f1": 0.7099
+  },
+  {
+   "code": "4006",
+   "name": "Communications engineering",
+   "train": 595,
+   "val": 75,
+   "f1": 0.7108
+  },
+  {
+   "code": "4014",
+   "name": "Manufacturing engineering",
+   "train": 429,
+   "val": 61,
+   "f1": 0.7154
+  },
+  {
+   "code": "4905",
+   "name": "Statistics",
+   "train": 522,
+   "val": 66,
+   "f1": 0.7194
+  },
+  {
+   "code": "3206",
+   "name": "Medical biotechnology",
+   "train": 553,
+   "val": 98,
+   "f1": 0.72
+  },
+  {
+   "code": "3007",
+   "name": "Forestry sciences",
+   "train": 1200,
+   "val": 150,
+   "f1": 0.722
+  },
+  {
+   "code": "4501",
+   "name": "Aboriginal and Torres Strait Islander culture, language and history",
+   "train": 749,
+   "val": 95,
+   "f1": 0.7234
+  },
+  {
+   "code": "3002",
+   "name": "Agriculture, land and farm management",
+   "train": 1278,
+   "val": 161,
+   "f1": 0.7243
+  },
+  {
+   "code": "3212",
+   "name": "Ophthalmology and optometry",
+   "train": 444,
+   "val": 56,
+   "f1": 0.729
+  },
+  {
+   "code": "3705",
+   "name": "Geology",
+   "train": 1231,
+   "val": 154,
+   "f1": 0.729
+  },
+  {
+   "code": "3009",
+   "name": "Veterinary sciences",
+   "train": 1132,
+   "val": 143,
+   "f1": 0.739
+  },
+  {
+   "code": "3799",
+   "name": "Other earth sciences",
+   "train": 1076,
+   "val": 135,
+   "f1": 0.7393
+  },
+  {
+   "code": "3105",
+   "name": "Genetics",
+   "train": 2002,
+   "val": 252,
+   "f1": 0.7409
+  },
+  {
+   "code": "5106",
+   "name": "Nuclear and plasma physics",
+   "train": 680,
+   "val": 86,
+   "f1": 0.7474
+  },
+  {
+   "code": "4703",
+   "name": "Language studies",
+   "train": 501,
+   "val": 63,
+   "f1": 0.75
+  },
+  {
+   "code": "3106",
+   "name": "Industrial biotechnology",
+   "train": 1251,
+   "val": 159,
+   "f1": 0.755
+  },
+  {
+   "code": "5105",
+   "name": "Medical and biological physics",
+   "train": 444,
+   "val": 55,
+   "f1": 0.7568
+  },
+  {
+   "code": "3004",
+   "name": "Crop and pasture production",
+   "train": 2036,
+   "val": 257,
+   "f1": 0.7569
+  },
+  {
+   "code": "4610",
+   "name": "Library and information studies",
+   "train": 478,
+   "val": 60,
+   "f1": 0.7576
+  },
+  {
+   "code": "4502",
+   "name": "Aboriginal and Torres Strait Islander education",
+   "train": 441,
+   "val": 55,
+   "f1": 0.7611
+  },
+  {
+   "code": "5110",
+   "name": "Synchrotrons and accelerators",
+   "train": 450,
+   "val": 56,
+   "f1": 0.7656
+  },
+  {
+   "code": "4704",
+   "name": "Linguistics",
+   "train": 913,
+   "val": 114,
+   "f1": 0.7704
+  },
+  {
+   "code": "3006",
+   "name": "Food sciences",
+   "train": 1600,
+   "val": 202,
+   "f1": 0.7837
+  },
+  {
+   "code": "3603",
+   "name": "Music",
+   "train": 282,
+   "val": 61,
+   "f1": 0.7863
+  },
+  {
+   "code": "3508",
+   "name": "Tourism",
+   "train": 505,
+   "val": 63,
+   "f1": 0.7914
+  },
+  {
+   "code": "3203",
+   "name": "Dentistry",
+   "train": 409,
+   "val": 51,
+   "f1": 0.7921
+  },
+  {
+   "code": "3706",
+   "name": "Geophysics",
+   "train": 498,
+   "val": 62,
+   "f1": 0.806
+  },
+  {
+   "code": "4516",
+   "name": "Pacific Peoples health and wellbeing",
+   "train": 360,
+   "val": 45,
+   "f1": 0.8155
+  },
+  {
+   "code": "4503",
+   "name": "Aboriginal and Torres Strait Islander environmental knowledges and management",
+   "train": 260,
+   "val": 33,
+   "f1": 0.8219
+  },
+  {
+   "code": "4513",
+   "name": "Pacific Peoples culture, language and history",
+   "train": 466,
+   "val": 59,
+   "f1": 0.8226
+  },
+  {
+   "code": "4002",
+   "name": "Automotive engineering",
+   "train": 407,
+   "val": 51,
+   "f1": 0.8235
+  },
+  {
+   "code": "4504",
+   "name": "Aboriginal and Torres Strait Islander health and wellbeing",
+   "train": 725,
+   "val": 91,
+   "f1": 0.8241
+  },
+  {
+   "code": "3502",
+   "name": "Banking, finance and investment",
+   "train": 1163,
+   "val": 146,
+   "f1": 0.8261
+  },
+  {
+   "code": "5109",
+   "name": "Space sciences",
+   "train": 409,
+   "val": 51,
+   "f1": 0.8333
+  },
+  {
+   "code": "3104",
+   "name": "Evolutionary biology",
+   "train": 1189,
+   "val": 182,
+   "f1": 0.8371
+  },
+  {
+   "code": "4510",
+   "name": "Te hauora me te oranga o te Māori (Māori health and wellbeing)",
+   "train": 432,
+   "val": 54,
+   "f1": 0.8455
+  },
+  {
+   "code": "3003",
+   "name": "Animal production",
+   "train": 1180,
+   "val": 149,
+   "f1": 0.8531
+  },
+  {
+   "code": "3005",
+   "name": "Fisheries sciences",
+   "train": 1160,
+   "val": 146,
+   "f1": 0.8714
+  },
+  {
+   "code": "4514",
+   "name": "Pacific Peoples education",
+   "train": 130,
+   "val": 16,
+   "f1": 0.8824
+  }
+ ],
+ "gpu_peak_gb": 10.04,
+ "skipped_fp16_steps": 0,
+ "stopped_by_time_budget": false,
+ "minutes": 623.6
+}
