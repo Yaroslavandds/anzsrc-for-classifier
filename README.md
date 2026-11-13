@@ -1,109 +1,112 @@
-# Класифікатор наукових публікацій за ANZSRC FoR 2020
+# ANZSRC FoR 2020 classifier for research publications
 
-Визначає, до яких груп австралійсько-новозеландської класифікації галузей досліджень
-**ANZSRC Fields of Research 2020** (213 чотиризначних груп у 23 розділах) належить публікація, — лише за її
-назвою та анотацією.
+Assigns a research publication to groups of the Australian and New Zealand Standard Research Classification,
+**ANZSRC Fields of Research 2020** (213 four-digit groups in 23 divisions), from its title and abstract alone.
 
-**English version:** [README.en.md](README.en.md)
+**Українською:** [README.uk.md](README.uk.md). The detailed documentation in [docs/](docs/) is in Ukrainian; the
+scripts' docstrings and code comments are in English.
 
-## Що досягнуто
+## What was achieved
 
-- З 118 099 записів після очищення лишилося **109 547 публікацій** з мітками ANZSRC FoR 2020: прибрано дублікати, шаблонні й чужі анотації, службові
-  записи; мітки звірено з офіційною таблицею відповідності ABS (FoR 2008 → 2020) і з самими текстами. Кожне
-  видалення чи правку можна відстежити до конкретного правила.
-- **Чесна схема перевірки.** Дані поділено за джерелами: у test лише журнали й репозиторії, яких моделі не
-  бачили під час навчання (жодної спільної назви, DOI чи джерела). Ваги й пороги підібрано тільки на val,
-  позафолдово.
-- **Шість моделей — від TF-IDF до великих трансформерів.** TF-IDF + логістична регресія, SciBERT, SPECTER2,
-  RoBERTa-base навчено на ноутбуці з відеокартою 4 ГБ; ModernBERT-large і DeBERTa-v3-large — повністю донавчено
-  на безкоштовних відеокартах Kaggle (2 × T4).
-- **Очищення міток для навчання.** У train знято коди, які журнали ставлять усім статтям, хоч тексти їх не
-  підтримують: мітки змінено в 933 записах, 916 записів виключено.
-- **Підсумкова модель** — поєднання TF-IDF + SPECTER2 + ModernBERT-large. На test (11 187 записів):
-  - перша запропонована група правильна у **70,4 %** записів (95 % ДІ 67,6–72,9 %), на 3,1 пункту краще за
-    найкращу окрему модель;
-  - правильна група серед трьох перших — у **87,7 %**, серед п'яти — у **92,6 %**;
-  - розділ (дві перші цифри коду) правильний у **80,8 %**, серед двох перших — у **92,4 %**.
-- **Режим впевненості.** Для **46 %** записів модель визначає групу з точністю **89,6 %**; решту можна
-  передати людині з трьома кандидатами (правильний серед них — у 80 %).
-- **Аналіз меж.** Ручна перевірка розбіжностей і сліпі порівняння систем показали, що більшість «помилок» —
-  сусідні групи, «Other …» або неточні мітки: за мітками виміряна точність навряд чи перевищить ~80 %.
-- **Готовий інструмент.** [`predict.py`](training/predict.py) додає до CSV чи Excel з новими публікаціями групи,
-  їхні назви, розділи, п'ять найімовірніших варіантів і впевненість моделі.
+- Out of 118,099 records, **109,547 publications** with ANZSRC FoR 2020 labels remain after cleaning: duplicates,
+  boilerplate and misattached abstracts and non-research records were removed; labels were checked against the
+  official ABS FoR 2008 → 2020 correspondence and against the texts themselves. Every removal or change traces
+  back to a specific rule.
+- **An honest evaluation protocol.** The data are split by source: the test set contains only journals and
+  repositories the models never saw in training (no shared title, DOI or source). Weights and thresholds were
+  tuned on the validation set only, out of fold.
+- **Six models, from TF-IDF to large transformers.** TF-IDF + logistic regression, SciBERT, SPECTER2 and
+  RoBERTa-base were trained on a laptop with a 4 GB GPU; ModernBERT-large and DeBERTa-v3-large were fully
+  fine-tuned on free Kaggle GPUs (2 × T4).
+- **Cleaner training labels.** Journal-wide codes that the articles' texts do not support were removed from
+  the training set: labels changed in 933 records, 916 records excluded.
+- **The final model** combines TF-IDF + SPECTER2 + ModernBERT-large. On the test set (11,187 records):
+  - the first suggested group is correct for **70.4%** of records (95% CI 67.6–72.9%), 3.1 percentage points
+    above the best single model;
+  - a correct group is among the top three for **87.7%**, among the top five for **92.6%**;
+  - the division (first two digits) is correct for **80.8%**, within the top two for **92.4%**.
+- **Confidence mode.** For **46%** of records the model assigns a group with **89.6%** precision; the rest can
+  go to a person with three candidates (a correct one among them in 80% of cases).
+- **Understanding the ceiling.** A manual review of disagreements and blind comparisons of systems showed that
+  most "errors" are neighbouring groups, "Other …" codes or imprecise labels: accuracy measured against these
+  labels is unlikely to exceed ~80%.
+- **A ready-to-use tool.** [`predict.py`](training/predict.py) adds groups, their names, divisions, the five most
+  probable groups and the model's confidence to a CSV or Excel file of new publications.
 
-## Результати
+## Results
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/img/models_uk_dark.png">
-  <img alt="P@1 і топ-3 окремих моделей і їх поєднань на test" src="docs/img/models_uk_light.png">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/img/models_en_dark.png">
+  <img alt="P@1 and top-3 of single models and ensembles on the test set" src="docs/img/models_en_light.png">
 </picture>
 
-| Підсумкове поєднання | test | val, позафолдово |
+| Final ensemble | test | validation, out of fold |
 |---|---:|---:|
-| Перша група правильна (P@1) | **0,704** | 0,708 |
-| … якщо «Other …» (XX99) зараховує групу того самого розділу | 0,731 | 0,737 |
-| Правильна група серед 3 перших | **0,877** | 0,872 |
-| Правильна група серед 5 перших | 0,926 | 0,928 |
-| micro-F1 / macro-F1 (вибраний набір груп) | 0,642 / 0,623 | 0,644 / 0,617 |
-| macro-AP | 0,659 | 0,660 |
-| Розділ: перший правильний / серед двох перших | **0,808** / 0,924 | 0,818 / 0,926 |
+| First group correct (P@1) | **0.704** | 0.708 |
+| … counting any group of the same division as correct for an "Other …" (XX99) label | 0.731 | 0.737 |
+| Correct group in top 3 | **0.877** | 0.872 |
+| Correct group in top 5 | 0.926 | 0.928 |
+| micro-F1 / macro-F1 (selected set of groups) | 0.642 / 0.623 | 0.644 / 0.617 |
+| macro-AP | 0.659 | 0.660 |
+| Division: first correct / within top two | **0.808** / 0.924 | 0.818 / 0.926 |
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/img/coverage_uk_dark.png">
-  <img alt="Точність залежно від частки записів, які модель розмічає сама" src="docs/img/coverage_uk_light.png">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/img/coverage_en_dark.png">
+  <img alt="Accuracy versus the share of records the model labels on its own" src="docs/img/coverage_en_light.png">
 </picture>
 
-| Окрема модель (test) | Мітки train | P@1 | Топ-3 | micro-F1 | macro-F1 |
+| Single model (test) | Training labels | P@1 | Top-3 | micro-F1 | macro-F1 |
 |---|---|---:|---:|---:|---:|
-| TF-IDF + логістична регресія | очищені | 0,657 | 0,839 | 0,601 | 0,575 |
-| SciBERT | вихідні | 0,665 | 0,851 | 0,597 | 0,580 |
-| SPECTER2 | очищені | 0,670 | 0,856 | 0,603 | 0,585 |
-| RoBERTa-base | очищені | 0,638 | 0,834 | 0,573 | 0,557 |
-| DeBERTa-v3-large | очищені | 0,639 | 0,831 | 0,574 | 0,559 |
-| ModernBERT-large | очищені | 0,673 | 0,855 | 0,606 | 0,592 |
-| **Поєднання TF-IDF + SPECTER2 + ModernBERT-large** | очищені | **0,704** | **0,877** | **0,642** | **0,623** |
+| TF-IDF + logistic regression | cleaned | 0.657 | 0.839 | 0.601 | 0.575 |
+| SciBERT | original | 0.665 | 0.851 | 0.597 | 0.580 |
+| SPECTER2 | cleaned | 0.670 | 0.856 | 0.603 | 0.585 |
+| RoBERTa-base | cleaned | 0.638 | 0.834 | 0.573 | 0.557 |
+| DeBERTa-v3-large | cleaned | 0.639 | 0.831 | 0.574 | 0.559 |
+| ModernBERT-large | cleaned | 0.673 | 0.855 | 0.606 | 0.592 |
+| **Ensemble TF-IDF + SPECTER2 + ModernBERT-large** | cleaned | **0.704** | **0.877** | **0.642** | **0.623** |
 
-Усі експерименти, довірчі інтервали, результати за групами й за походженням записів, ручні перевірки —
-у [docs/results.md](docs/results.md).
+All experiments, confidence intervals, per-group and per-origin results and the manual reviews:
+[docs/results.md](docs/results.md).
 
-## Як це працює
+## How it works
 
 ```mermaid
 flowchart TD
-    A["Об'єднаний набір<br/>118 099 записів"] --> B["data_prep<br/>8 кроків очищення"]
-    B --> C["anzsrc4_cleaned.csv<br/>109 547 записів"]
-    C --> D["01 поділ за джерелами<br/>train / val / test"]
-    D --> G["06 очищення<br/>міток train"]
-    D --> E["02 TF-IDF +<br/>логістична регресія"]
-    D --> F["03 трансформери<br/>ноутбук і Kaggle"]
+    A["Merged dataset<br/>118,099 records"] --> B["data_prep<br/>8 cleaning steps"]
+    B --> C["anzsrc4_cleaned.csv<br/>109,547 records"]
+    C --> D["01 split by source<br/>train / val / test"]
+    D --> G["06 clean the<br/>training labels"]
+    D --> E["02 TF-IDF +<br/>logistic regression"]
+    D --> F["03 transformers<br/>laptop and Kaggle"]
     G --> E
     G --> F
-    E --> H["04 поєднання:<br/>ваги й поріг на val"]
+    E --> H["04 ensemble:<br/>weights and threshold on val"]
     F --> H
-    H --> I["05 одноразова<br/>оцінка на test"]
-    H --> J["predict.py<br/>нові публікації"]
+    H --> I["05 one-time<br/>test evaluation"]
+    H --> J["predict.py<br/>new publications"]
 ```
 
-1. **Дані** ([docs/data.md](docs/data.md)): вісім кроків очищення — дублікати, спільні й порожні анотації,
-   службові записи, мітки, коди FoR 2008, мова, майже однакові тексти, мітки, яких не підтримує текст.
-2. **Поділ** за журналами, префіксами DOI і репозиторіями (80 / 10 / 10), стратифікований за 213 групами.
-3. **Моделі** ([docs/method.md](docs/method.md)): TF-IDF + логістична регресія і п'ять трансформерів з лінійним
-   шаром над `[CLS]`, бінарна крос-ентропія зі зваженими рідкісними групами.
-4. **Поєднання:** зважене середнє логарифмів шансів; ваги й спільний поріг — перехресною перевіркою всередині val.
-5. **Оцінка:** test — один раз для кожної системи; бутстреп за джерелами; розбивка за походженням запису.
+1. **Data** ([docs/data.md](docs/data.md)): duplicates, shared and empty abstracts, non-research records,
+   labels, FoR 2008 codes, language, near-identical texts, labels the text does not support.
+2. **Split** by journal, DOI prefix and repository (80 / 10 / 10), stratified over the 213 groups.
+3. **Models** ([docs/method.md](docs/method.md)): TF-IDF + logistic regression and five transformer encoders
+   with a linear layer over `[CLS]`, binary cross-entropy with rare groups up-weighted.
+4. **Ensemble:** weighted mean of log-odds; weights and one shared threshold chosen by cross-validation
+   within the validation set.
+5. **Evaluation:** the test set once per system; source-level bootstrap; results by record origin.
 
-## Швидкий старт
+## Quick start
 
 ```bash
 git clone https://github.com/Yaroslavandds/anzsrc-for-classifier.git
 cd anzsrc-for-classifier
-python training/00_check_env.py       # підкаже команду встановлення PyTorch під вашу відеокарту
+python training/00_check_env.py       # prints the PyTorch install command for your GPU
 pip install -r requirements.txt
 ```
 
-Набору даних і навчених моделей у репозиторії немає (220 МБ даних з чужими анотаціями; моделі — кілька
-гігабайтів). Щоб відтворити роботу, покладіть набір у корінь як `anzsrc4_cleaned.csv` (або зберіть його з
-вихідних даних скриптами [data_prep/](data_prep/)) і запустіть кроки з [training/](training/):
+The dataset and the trained models are not in the repository (220 MB of data with third-party abstracts;
+several GB of models). To reproduce the work, put the dataset in the repository root as `anzsrc4_cleaned.csv`
+(or build it from the source data with [data_prep/](data_prep/)) and run [training/](training/):
 
 ```bat
 cd training
@@ -117,45 +120,46 @@ python 05_evaluate.py --ensemble ensemble_final
 python predict.py --input new_papers.xlsx --output predictions.xlsx
 ```
 
-Великій моделі потрібна відеокарта приблизно на 10 ГБ і більше; інакше — Kaggle або LoRA на 4 ГБ.
-Покрокова інструкція, час навчання й усі параметри — у [training/README.md](training/README.md).
+The large model needs a GPU with roughly 10 GB or more; otherwise use Kaggle or LoRA on 4 GB. Step-by-step
+instructions, training times and all options: [training/README.md](training/README.md).
 
-## Структура
+## Repository layout
 
 ```
 anzsrc-for-classifier/
-├── anzsrc2020_for.xlsx    назви груп і розділів (ABS, CC BY 4.0)
+├── anzsrc2020_for.xlsx    group and division names (ABS, CC BY 4.0)
 ├── requirements.txt
-├── data_prep/             вісім кроків очищення даних і таблиця відповідності FoR 2008 → 2020
-├── training/              поділ, моделі, поєднання, оцінка, передбачення, ноутбук Kaggle
+├── data_prep/             eight data-cleaning steps and the FoR 2008 → 2020 correspondence
+├── training/              split, models, ensemble, evaluation, prediction, Kaggle notebook
 └── docs/
-    ├── data.md            дані, поля, очищення, особливості міток
-    ├── method.md          поділ, моделі, навчання, поєднання, оцінка, обладнання
-    ├── results.md         усі результати, ручні перевірки, висновки
-    ├── img/               графіки (світла й темна теми)
-    └── results/           JSON-звіти скриптів
+    ├── data.md            data, fields, cleaning, label caveats
+    ├── method.md          split, models, training, ensemble, evaluation, hardware
+    ├── results.md         all results, manual reviews, conclusions
+    ├── img/               charts (light and dark)
+    └── results/           JSON reports written by the scripts
 ```
 
-## Обмеження
+## Limitations
 
-- **Мітки неточні.** Частина кодів — журнальні або поставлені репозиторіями автоматично; найпомітніші випадки
-  знято, але конвенції розмітки лишаються і в train, і в test. Сліпа перевірка не виявила змістового
-  покращення від останніх кроків: приріст метрик здебільшого означає краще відтворення цих конвенцій.
-- **Рідкісні групи.** Групи корінних студій (45xx) мають мало прикладів: 4517 — 6 записів, 4506 — 69.
-- **Нові типи матеріалів** (дисертації, набори даних, гранти): P@1 0,59–0,61 проти 0,73 для журнальних статей
-  вихідного набору.
-- **Лише англійська мова**, потрібна анотація.
-- **Ручні перевірки** виконував один рецензент — ШІ-асистент Claude, тож це оцінки, а не експертний еталон.
-- Склад підсумкового поєднання вибрано після вимірювання кількох варіантів на test (різниця між ними
-  ≤ 0,4 пункту), тож його цифри на test можуть бути трохи оптимістичними; позафолдова оцінка на val
-  така сама (P@1 0,708).
+- **Noisy labels.** Some codes are journal-wide or assigned automatically by repositories; the clearest cases
+  were removed, but labelling conventions remain in both training and test data. A blind review found no gain in
+  content from the last improvements: the metric gains mostly reflect closer agreement with these conventions.
+- **Rare groups.** The Indigenous studies groups (45xx) have few examples: 4517 has 6 records, 4506 has 69.
+- **Newer material types** (theses, datasets, grants): P@1 0.59–0.61 versus 0.73 for journal articles of the
+  original dataset.
+- **English only**; an abstract is required.
+- **The manual reviews** were done by an AI assistant (Claude) as a single reviewer: estimates, not an expert
+  gold standard.
+- The composition of the final ensemble was chosen after several variants had been scored on the test set
+  (within 0.4 points of each other), so its test numbers may be slightly optimistic; the out-of-fold validation
+  estimate is the same (P@1 0.708).
 
-## Ліцензія
+## Licence
 
-Код і документація — [MIT](LICENSE). Файли ABS (`anzsrc2020_for.xlsx`,
-`data_prep/anzsrc_for2008_to_2020_ABS.csv`) — © Australian Bureau of Statistics,
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Набір даних не поширюється.
+Code and documentation: [MIT](LICENSE). ABS files (`anzsrc2020_for.xlsx`,
+`data_prep/anzsrc_for2008_to_2020_ABS.csv`): © Australian Bureau of Statistics,
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The dataset is not distributed.
 
-## Автор
+## Author
 
-Yaroslav Korkos, 2026. Як цитувати — у [CITATION.cff](CITATION.cff).
+Yaroslav Korkos, 2026. How to cite: [CITATION.cff](CITATION.cff).
